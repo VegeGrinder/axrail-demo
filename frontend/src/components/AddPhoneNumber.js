@@ -41,27 +41,14 @@ export const AddPhoneNumber = () => {
         <div className="submit-form">
             {submitted ? (
                 <div>
-                    <div
-                        className="alert alert-success alert-dismissible fade show"
-                        role="alert"
-                    >
-                        Phone Number Added!
-                        <button
-                            type="button"
-                            className="close"
-                            data-dismiss="alert"
-                            aria-label="Close"
-                        >
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
+                    <div className="alert alert-success mt-3">Phone Number Added!</div>
                     <button className="btn btn-success" onClick={newPhoneNumber}>
-                        Add
+                        Add More
                     </button>
                 </div>
             ) : (
                 <div>
-                    <div className="form-group">
+                    <div className="form-group my-3">
                         <label htmlFor="name">Name</label>
                         <input
                             type="text"
@@ -73,7 +60,7 @@ export const AddPhoneNumber = () => {
                             name="name"
                         />
                     </div>
-                    <div className="form-group">
+                    <div className="form-group mb-3">
                         <label htmlFor="number">Phone Number</label>
                         <input
                             type="text"

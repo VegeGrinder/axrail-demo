@@ -7,16 +7,14 @@ import { PhoneNumberList } from "./components/PhoneNumberList";
 function App() {
     return (
         <div>
-            <nav className="navbar navbar-expand navbar-dark bg-info">
+            <nav className="navbar navbar-expand navbar-dark bg-primary px-5">
                 <a href="/" className="navbar-brand">
                     Phone Book
                 </a>
                 <div className="navbar-nav mr-auto">
-                    <li className="nav-item">
-                        <Link to={"/add/"} className="nav-link">
-                            Add
-                        </Link>
-                    </li>
+                    <Link to={"/add/"} className="btn btn-danger nav-link text-white">
+                        Add
+                    </Link>
                 </div>
             </nav>
             <div className="container m-10">

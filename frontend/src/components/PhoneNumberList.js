@@ -33,48 +33,34 @@ export const PhoneNumberList = () => {
     };
     return (
         <div className="row justify-content-center">
-            <div className="col">
-                {deleted && (
-                    <div
-                        className="alert alert-danger alert-dismissible fade show"
-                        role="alert"
-                    >
-                        Phone Number deleted!
-                        <button
-                            type="button"
-                            className="close"
-                            data-dismiss="alert"
-                            aria-label="Close"
-                        >
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                )}
-                {phonenumbers &&
-                    phonenumbers.map((phonenumber, index) => (
-                        <div className="card my-3 w-25 mx-auto">
-                            <div className="card-body">
-                                <h2 className="card-title font-weight-bold">{phonenumber.name}</h2>
-                                <h4 className="card-subtitle mb-2">{phonenumber.number}</h4>
-                            </div>
-                            <div classNameName="card-footer">
-                                <div
-                                    className="btn-group justify-content-around w-75 mb-1 "
-                                    data-toggle="buttons"
-                                >
-                                    <span>
-                                        <button
-                                            className="btn btn-danger"
-                                            onClick={() => deletePhoneNumber(phonenumber.id)}
-                                        >
-                                            Delete
-                                        </button>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    ))}
-            </div>
+            <table className="table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Phone Number</th>
+                        <th>Name</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {phonenumbers &&
+                        phonenumbers.map((phonenumber, index) => (
+                            <tr key={phonenumber.id}>
+                                <td>{phonenumber.id}</td>
+                                <td>{phonenumber.number}</td>
+                                <td>{phonenumber.name}</td>
+                                <td>
+                                    <button
+                                        className="btn btn-danger"
+                                        onClick={() => deletePhoneNumber(phonenumber.id)}
+                                    >
+                                        Delete
+                                    </button>
+                                </td>
+                            </tr>
+                        ))}
+                </tbody>
+            </table>
         </div>
     );
 };
