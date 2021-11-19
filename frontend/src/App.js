@@ -12,7 +12,7 @@ function App() {
                     Phone Book
                 </a>
                 <div className="navbar-nav mr-auto">
-                    <Link to={"/add/"} className="btn btn-danger nav-link text-white">
+                    <Link to={"/add/"} className="btn btn-success nav-link text-white">
                         Add
                     </Link>
                 </div>

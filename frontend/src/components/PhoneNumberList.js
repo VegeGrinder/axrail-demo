@@ -43,7 +43,7 @@ export const PhoneNumberList = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {phonenumbers &&
+                    {phonenumbers.length ? (
                         phonenumbers.map((phonenumber, index) => (
                             <tr key={phonenumber.id}>
                                 <td>{phonenumber.id}</td>
@@ -58,7 +58,12 @@ export const PhoneNumberList = () => {
                                     </button>
                                 </td>
                             </tr>
-                        ))}
+                        ))
+                    ) : (
+                        <tr>
+                            <td className="text-justify" colspan="4">No data available</td>
+                        </tr>
+                    )}
                 </tbody>
             </table>
         </div>

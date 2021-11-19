@@ -9,6 +9,7 @@ export const AddPhoneNumber = () => {
     };
     const [phonenumber, setPhoneNumber] = useState(initialPhoneNumberState);
     const [submitted, setSubmitted] = useState(false);
+    const [uniqueError, setUniqueError] = useState(false);
     const handlePhoneNumberChange = (e) => {
         const { name, value } = e.target;
         setPhoneNumber({ ...phonenumber, [name]: value });
@@ -31,21 +32,33 @@ export const AddPhoneNumber = () => {
             })
             .catch((e) => {
                 console.error(e);
+                setSubmitted(true);
+                setUniqueError(true);
             });
     };
     const newPhoneNumber = () => {
         setPhoneNumber(initialPhoneNumberState);
         setSubmitted(false);
+        setUniqueError(false);
     };
     return (
         <div className="submit-form">
             {submitted ? (
-                <div>
-                    <div className="alert alert-success mt-3">Phone Number Added!</div>
-                    <button className="btn btn-success" onClick={newPhoneNumber}>
-                        Add More
-                    </button>
-                </div>
+                uniqueError ? (
+                    <div>
+                        <div className="alert alert-danger mt-3">Phone Number already exist!</div>
+                        <button className="btn btn-success" onClick={newPhoneNumber}>
+                            Try Again!
+                        </button>
+                    </div>
+                ) : (
+                    <div>
+                        <div className="alert alert-success mt-3">Phone Number Added!</div>
+                        <button className="btn btn-success" onClick={newPhoneNumber}>
+                            Add More
+                        </button>
+                    </div>
+                )
             ) : (
                 <div>
                     <div className="form-group my-3">
