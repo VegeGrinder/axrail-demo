@@ -61,7 +61,7 @@ export const PhoneNumberList = () => {
                         ))
                     ) : (
                         <tr>
-                            <td className="text-justify" colspan="4">No data available</td>
+                            <td className="text-center" colspan="4">No data available</td>
                         </tr>
                     )}
                 </tbody>
