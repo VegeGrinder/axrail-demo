@@ -4,4 +4,4 @@ from backend.models import PhoneNumber
 class PhoneNumberSerializer(serializers.ModelSerializer):
     class Meta:
         model = PhoneNumber
-        fields = ['name', 'number']
+        fields = ['id', 'name', 'number']

@@ -12,7 +12,7 @@ export const PhoneNumberList = () => {
     }, [countRef]);
     const retrieveAllPhoneNumbers = () => {
         axios
-            .get(`${baseURL}/phonenumbers/`,)
+            .get(`${baseURL}/phonenumbers/`)
             .then((response) => {
                 setPhoneNumbers(response.data);
             })
@@ -22,11 +22,7 @@ export const PhoneNumberList = () => {
     };
     const deletePhoneNumber = (id) => {
         axios
-            .delete(`${baseURL}/phonenumbers/${id}/`, {
-                headers: {
-                    headers,
-                },
-            })
+            .delete(`${baseURL}/phonenumbers/${id}/`)
             .then((response) => {
                 setDeleted(true);
                 retrieveAllPhoneNumbers();

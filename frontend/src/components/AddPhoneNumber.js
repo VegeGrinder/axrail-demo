@@ -19,11 +19,7 @@ export const AddPhoneNumber = () => {
             number: phonenumber.number
         };
         axios
-            .post(`${baseURL}/phonenumber/`, data, {
-                headers: {
-                    headers,
-                },
-            })
+            .post(`${baseURL}/phonenumbers/`, data)
             .then((response) => {
                 setPhoneNumber({
                     id: response.data.id,
@@ -84,7 +80,7 @@ export const AddPhoneNumber = () => {
                             className="form-control"
                             id="number"
                             required
-                            value={phonenumber.description}
+                            value={phonenumber.number}
                             onChange={handlePhoneNumberChange}
                             name="number"
                         />
